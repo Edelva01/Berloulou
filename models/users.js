@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     Users.init({
         name: DataTypes.STRING,
         password_hash: DataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+
         role: {
             type: DataTypes.ENUM('admin', 'customer'),
             allowNull: false,
